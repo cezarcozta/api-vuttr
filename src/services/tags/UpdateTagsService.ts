@@ -7,7 +7,7 @@ interface RequestDTO {
 }
 
 class UpdateTagsService {
-  public async execute({ id, name }: RequestDTO) {
+  public async execute({ id, name }: RequestDTO): Promise<Tags> {
     const tagRepository = getRepository(Tags);
 
     const tag = await tagRepository.findOne(id);

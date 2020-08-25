@@ -10,14 +10,14 @@ interface RequestDTO {
 }
 
 class CreateToolsService {
-  public async execute({ title, link, description, tagsIDs }: RequestDTO) {
+  public async execute({ title, link, description, tagsIDs }: RequestDTO): Promise<Tools> {
     const toolRepository = getRepository(Tools);
     const tagRepository = getRepository(Tags);
 
     const existsTags = await tagRepository.findByIds(tagsIDs);
 
     const tool = toolRepository.create({ title, link, description, tags: existsTags });
-    console.log(tool);
+
     await toolRepository.save(tool);
 
     return tool;

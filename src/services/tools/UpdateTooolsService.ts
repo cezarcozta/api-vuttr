@@ -9,7 +9,7 @@ interface RequestDTO {
 }
 
 class UpdateToolsService {
-  public async execute({ id, title, link, description }: RequestDTO) {
+  public async execute({ id, title, link, description }: RequestDTO): Promise<Tools> {
     const toolRepository = getRepository(Tools);
 
     const tool = await toolRepository.findOne(id);

@@ -2,16 +2,21 @@ import { getRepository } from 'typeorm';
 import Tools from '../../models/Tools';
 
 class DeleteToolsService {
-  public async execute(id: string) {
+  public async execute(id: string): Promise<void> {
     const toolsRepository = getRepository(Tools);
 
-    const tool = await toolsRepository.findOne(id);
+    try {
+      const tool = await toolsRepository.findOne(id);
 
-    if (!tool) {
-      throw new Error('Tool not found!');
+      if (!tool) {
+        throw new Error('Tool not found!');
+      }
+
+      await toolsRepository.remove(tool);
+    } catch (error) {
+
+      throw new Error(error.message);
     }
-
-    await toolsRepository.remove(tool);
   }
 }
 

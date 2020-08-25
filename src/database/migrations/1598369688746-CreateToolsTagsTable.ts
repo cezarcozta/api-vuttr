@@ -27,7 +27,7 @@ export class CreateToolsTagsTable1598369688746 implements MigrationInterface {
         referencedTableName: 'tools',
         name: 'fk_tools_tags_',
         onDelete: 'CASCADE',
-        onUpdate: 'SET NULL',
+        onUpdate: 'CASCADE',
       }),
     );
 
@@ -39,15 +39,15 @@ export class CreateToolsTagsTable1598369688746 implements MigrationInterface {
         referencedTableName: 'tags',
         name: 'fk_tags_tools_',
         onDelete: 'CASCADE',
-        onUpdate: 'SET NULL',
+        onUpdate: 'CASCADE',
       }),
     );
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropForeignKey('tools_tags', 'fk_tools_tags_');
-
     await queryRunner.dropForeignKey('tools_tags', 'fk_tags_tools_');
+
+    await queryRunner.dropForeignKey('tools_tags', 'fk_tools_tags_');
 
     await queryRunner.dropTable('tools_tags');
   }
