@@ -9,7 +9,7 @@ interface RequestDTO {
   tagsIDs: any;
 }
 
-class CreateUserService {
+class CreateToolsService {
   public async execute({ title, link, description, tagsIDs }: RequestDTO) {
     const toolRepository = getRepository(Tools);
     const tagRepository = getRepository(Tags);
@@ -24,4 +24,4 @@ class CreateUserService {
   }
 }
 
-export default CreateUserService;
+export default CreateToolsService;
