@@ -4,7 +4,7 @@
   "database": "./src/database/data/database.sqlite",
   "autoSchemaSync": true,
   "entities": [
-    "./src/Models/*.ts"
+    "./src/models/*.ts"
   ],
   "migrations": [
     "./src/database/migrations/*.ts"

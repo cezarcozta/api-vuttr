@@ -4,7 +4,9 @@ import {
   Column,
   ManyToMany,
   CreateDateColumn,
-  UpdateDateColumn
+  UpdateDateColumn,
+  JoinTable,
+  JoinColumn
 } from 'typeorm';
 
 import Tags from './Tags';
@@ -24,7 +26,12 @@ class Tools {
   @Column()
   description: string;
 
-  @ManyToMany(() => Tools, tool => tool.tags)
+  @ManyToMany(() => Tags, tags => tags.name)
+  @JoinTable({
+    name: 'tools_tags',
+    joinColumns: [{ name: 'tool_id' }],
+    inverseJoinColumns: [{ name: 'tag_id' }]
+  })
   tags: Tags[];
 
   @CreateDateColumn()

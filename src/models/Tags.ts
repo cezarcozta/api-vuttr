@@ -4,7 +4,8 @@ import {
   Column,
   CreateDateColumn,
   UpdateDateColumn,
-  ManyToMany
+  ManyToMany,
+  JoinColumn
 } from 'typeorm';
 
 import Tools from './Tools';
@@ -17,7 +18,7 @@ class Tags {
   @Column()
   name: string;
 
-  @ManyToMany(() => Tags, tag => tag.tools)
+  @ManyToMany(() => Tools, tools => tools.title)
   tools: Tools[];
 
   @CreateDateColumn()

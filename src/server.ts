@@ -4,11 +4,12 @@ import express from 'express';
 
 import './database';
 
+import routes from './routes';
+
 const app = express();
 
-app.post('/tools', (request, response) => {
-  response.send({ message: 'ok' });
-})
+app.use(express.json());
+app.use(routes);
 
 app.listen(3000, () => {
   console.log('Server Started!!!');
