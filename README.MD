@@ -4,11 +4,11 @@
 
 ## Index
 
-- [API Rest](#-API-Rest)
-- [Techs And Tools](#-Tech-and-Tools)
-- [Getting Started](#-Getting-Started)
-- [End Points](#-End-Points)
-- [Author](#-Author)
+- [API Rest](#-api-rest)
+- [Techs And Tools](#-tech-and-tools)
+- [Getting Started](#-getting-started)
+- [End Points](#-end-points)
+- [Author](#-author)
 
 ## API Rest
 
