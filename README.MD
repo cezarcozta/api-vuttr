@@ -12,7 +12,7 @@
 
 ## API Rest
 
->The Application is a simple API Rest to abstract a repository that you can manager tools and their names, links, descriptions and tags. I used a many to many bi-derectional relationship between Tools and Tags. It's a recruitment test for the [bossabox](https://app.bossabox.com/) plataform.
+>The Application is a simple API Rest to abstract a repository that you can manager tools and their names, links, descriptions and tags. I used many to many bi-derectional relationship between Tools and Tags. It's a recruitment test for the [bossabox](https://app.bossabox.com/) plataform.
 
 ### Tech and Tools
 
